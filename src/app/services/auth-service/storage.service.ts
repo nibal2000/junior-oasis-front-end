@@ -12,16 +12,15 @@ export class StorageService {
   constructor() { }
 
   public saveUser(user: any) {
-    window.localStorage.removeItem(USER);
     window.localStorage.setItem(USER, JSON.stringify(user)); // set new user
   }
 
   public saveToken(token: any) { // it should be type string but i got an error so i changed the type to any
-    window.localStorage.removeItem(TOKEN);
     window.localStorage.setItem(TOKEN, token);
   }
 
   //TODO to handle which navbar
+
  /** static getToken(): string {
      return localStorage.getItem(TOKEN);
   }

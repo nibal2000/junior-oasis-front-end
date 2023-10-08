@@ -26,12 +26,18 @@ export class LoginComponent implements OnInit {
       password: ['', Validators.required],
     })
   }
+
+// this method with the one commented in the service just display the token from the backend without saving it to header
+  /*login() {
+    console.log(this.loginForm.value);
+    this.service.login(this.loginForm.value).subscribe((response)=> {console.log(response);})
+  }*/
+
   login() {
     console.log(this.loginForm.value);
-    this.service.login(
-      //this.loginForm.value
+   this.service.login(
       this.loginForm.get(['email'])!.value,
-      this.loginForm.get(['password'])!.value,
+      this.loginForm.get(['password'])!.value
     ).subscribe( // check if credentials are correct, if not send error message
       response => {
         this.router.navigateByUrl("user/dashboard")
@@ -43,6 +49,7 @@ export class LoginComponent implements OnInit {
         })
       }
     )
+
   }
 
 }

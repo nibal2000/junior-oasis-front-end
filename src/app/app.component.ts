@@ -21,14 +21,3 @@ export class AppComponent implements OnInit{
   } */
 
 }
-
-/**
- * //TODO to reput the code in app.component.html
- * <div>
- *   <mat-toolbar class="navbar">
- *     <span class="navbar-logo">Junior-Oasis</span>
- *     <span class="spacing"></span>
- *     <button mat-button routerLink="/login" routerLinkActive="active">Dashboard</button>
- *     <button mat-button routerLinkActive="active">Logout</button>
- *   </mat-toolbar>
- * </div>*/
