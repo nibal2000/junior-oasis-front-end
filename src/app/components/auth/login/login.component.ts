@@ -27,12 +27,6 @@ export class LoginComponent implements OnInit {
     })
   }
 
-// this method with the one commented in the service just display the token from the backend without saving it to header
-  /*login() {
-    console.log(this.loginForm.value);
-    this.service.login(this.loginForm.value).subscribe((response)=> {console.log(response);})
-  }*/
-
   login() {
     console.log(this.loginForm.value);
    this.service.login(
@@ -49,7 +43,5 @@ export class LoginComponent implements OnInit {
         })
       }
     )
-
   }
-
 }

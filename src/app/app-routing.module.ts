@@ -6,7 +6,8 @@ import {SignupComponent} from "./components/auth/signup/signup.component";
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'signup', component: SignupComponent},
-  {path: "user", loadChildren:() => import("./user/user.module").then(m => m.UserModule)} // import user module who has user-routing.module
+  // import user module (who has user-routing.module) to Register user-routing-module in this main routing
+  {path: "user", loadChildren:() => import("./user/user.module").then(m => m.UserModule)}
 ];
 
 @NgModule({

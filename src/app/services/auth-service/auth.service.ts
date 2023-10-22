@@ -3,7 +3,7 @@ import {HttpClient, HttpResponse} from "@angular/common/http";
 import {map, Observable, tap} from "rxjs";
 import {StorageService} from "./storage.service";
 import EndPoints from "../../utils/routes"
-const BASIC_URL = ['http://localhost:8080/'];
+
 export const AUTH_HEADER = "authorization";
 @Injectable({
   providedIn: 'root'
@@ -15,7 +15,7 @@ export class AuthService {
 
   //signupRequest : pass the argument i passed in backend (signupDTO) in the method createUser in SignupController
   signup(signupRequest: any): Observable<any> {
-    return this.httpclient.post(BASIC_URL + "sign-up", signupRequest)
+    return this.httpclient.post( EndPoints.SIGNUP , signupRequest)
   }
   /*login(loginRequest: any): Observable<any> {
     return this.httpclient.post(BASIC_URL + "auth", loginRequest)

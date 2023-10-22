@@ -1,5 +1,6 @@
 <div class="signup-container">
-  <mat-card class="signup-card">
+  <div class="card-container">
+  <mat-card class="signup-card left-card">
     <mat-card-content>
       <h2 class="signup-caption">Signup</h2>
       <form [formGroup]="signupForm">
@@ -32,4 +33,16 @@
       </form>
     </mat-card-content>
   </mat-card>
+    <mat-card class="signup-card right-card">
+      <mat-card-content>
+          <h1>Junior Oasis.</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero
+          </p>
+          <span>Do you have an account?</span> <br>
+          <button>Login</button>
+      </mat-card-content>
+    </mat-card>
+
+  </div>
 </div>

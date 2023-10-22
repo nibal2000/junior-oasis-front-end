@@ -43,7 +43,7 @@ export class SignupComponent implements OnInit {
 
   //send the whole form of this method into auth service
   signup() {
-    console.log(this.signupForm?.value)
+    console.log('signup',this.signupForm?.value)
     this.authService.signup(this.signupForm.value).subscribe((response) => {
       console.log(response);
       if (response.id != null) {

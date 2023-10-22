@@ -15,19 +15,21 @@ export class StorageService {
     window.localStorage.setItem(USER, JSON.stringify(user)); // set new user
   }
 
-  public saveToken(token: any) { // it should be type string but i got an error so i changed the type to any
+  public saveToken(token: any) { // it should be type string but i got an error in authservice "headers.get..."so i changed the type to any
     window.localStorage.setItem(TOKEN, token);
   }
 
-  //TODO to handle which navbar
-
- /** static getToken(): string {
-     return localStorage.getItem(TOKEN);
+  // handle which navbar to display
+ static getToken(): string | null {
+     return window.localStorage.getItem(TOKEN);
   }
-  static isUserLoggedIn() {
-    if (this.getToken() == null) {
-      return false;
-    }
-    return true
-  } **/
+  static isUserLoggedIn(): boolean {
+    return !!this.getToken(); // !! forces the value to be interpreted as a boolean and returns true or false
+    // it will return true if user not null
+  }
+
+  static logout() {
+    window.localStorage.removeItem(TOKEN); // we can use clear method also
+    window.localStorage.removeItem(USER);
+  }
 }

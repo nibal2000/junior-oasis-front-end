@@ -1,1 +1,41 @@
-<p>dashboard works!</p>
+<div style="min-height: 91vh; padding: 30px" *ngIf="posts">
+  <div>
+    <div class="container">
+      <ng-container *ngIf="posts.length === 0; else postList">
+        <mat-card class="empty-message">
+          <mat-card-content>
+            <mat-icon>sentiment_dissatisfied</mat-icon>
+            <p>No Posts found</p>
+          </mat-card-content>
+        </mat-card>
+      </ng-container>
+
+      <ng-template #postList>
+        <div class="child" *ngFor="let post of posts">
+          <h2 class="post_title">
+
+            <a routerLink="/user/post/{{post.id}}">{{ post.title }}</a>
+          </h2>
+          <div class="post_content">
+            <p> {{ post.body }}</p>
+            <div class="tags_container">
+              <mat-chip-listbox>
+                <mat-chip *ngFor="let tag of post.tags" color="primary">{{ tag }}</mat-chip>
+              </mat-chip-listbox>
+            </div>
+            <hr>
+            <h5>
+              Posted by: <b>{{ post.owner.userName}}</b> -
+              Posted on: <b>{{ post.createdAt | date:'dd, MM, YYYY'}}</b>
+            </h5>
+          </div>
+        </div>
+      </ng-template>
+
+      <div class="pagination">
+        <mat-paginator [length]="total" [pageIndex]="pageNum" [pageSize]="5"
+                       (page)="pageIndexChange($event)"></mat-paginator>
+      </div>
+    </div>
+  </div>
+</div>
