@@ -1,6 +1,19 @@
-<div class="post-card" style="margin-top: 10px">
+<div class="post-card" style="margin-top: 40px">
+  <div class="user">
+    <div class="userInfo">
+      <img src="https://images.pexels.com/photos/1036623/pexels-photo-1036623.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="" />
+      <div class="details">
+        <a [routerLink]="['/profile', post.userId]" style="text-decoration: none; color: inherit;">
+          <span class="name">{{ post.owner.userName}}</span>
+        </a>
+        <span class="date">{{ post.createdAt | date:'dd-MM-YYYY'}}</span>
+      </div>
+    </div>
+    <mat-icon>more_horiz</mat-icon>
+  </div>
+
   <h2>{{ post?.title || "" }}</h2>
-  <p>Asked at: <b>{{ (post?.createdAt | date: 'EEEE, MMMM d, y') || '' }}</b> By: <b>{{ post?.owner.userName || "unknown"}}</b></p>
+<!--  <p>Asked at: <b>{{ (post?.createdAt | date: 'EEEE, MMMM d, y') || '' }}</b> By: <b>{{ post?.owner.userName || "unknown"}}</b></p>-->
   <div class="post-body">
     <p> Description : {{ post?.body || "" }}</p>
     <div class="tag-list">

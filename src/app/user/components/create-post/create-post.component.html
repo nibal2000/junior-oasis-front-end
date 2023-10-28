@@ -1,11 +1,11 @@
 <!--<mat-spinner [color]="'primary'" [diameter]="60" [strokeWidth]="6" *ngIf="!isSubmitting"></mat-spinner>-->
 <div class="parent" *ngIf="!isSubmitting">
   <div class="child">
-    <h2 class="post-caption">Create a post</h2>
+    <h2 class="post-caption">Create your Post</h2>
 
     <form [formGroup]="validateForm">
       <div class="form-input">
-        <mat-form-field appearance="fill">
+        <mat-form-field>
           <mat-label>Title</mat-label>
           <input matInput placeholder="title" formControlName="title">
           <mat-error
@@ -48,7 +48,7 @@
       </div>
 
       <button mat-raised-button color="primary" type="submit" class="login-form-button login-form-margin"
-              (click)="addPost()">Submit post
+              (click)="addPost()">Publish your Post
       </button>
     </form>
 

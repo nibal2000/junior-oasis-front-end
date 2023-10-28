@@ -1,48 +1,25 @@
 <div class="signup-container">
   <div class="card-container">
-  <mat-card class="signup-card left-card">
-    <mat-card-content>
-      <h2 class="signup-caption">Signup</h2>
+    <div class="right-card">
+      <h2>Signup</h2>
       <form [formGroup]="signupForm">
-        <div class="form-input">
-          <mat-form-field>
-            <mat-label>Name</mat-label>
-            <input matInput placeholder="Name" name="name" required formControlName="name">
-          </mat-form-field>
-        </div>
-        <div class="form-input">
-          <mat-form-field>
-            <mat-label>Email</mat-label>
-            <input matInput placeholder="example@gmail.com" name="email" required formControlName="email">
-          </mat-form-field>
-        </div>
-        <div class="form-input">
-          <mat-form-field>
-            <mat-label>Password</mat-label>
-            <input matInput placeholder="Password" name="password" type="password" required formControlName="password">
-          </mat-form-field>
-        </div>
-        <div class="form-input">
-          <mat-form-field>
-            <mat-label>Confirm password</mat-label>
-            <input matInput placeholder="confirm password" name="confirmPassword" type="password" required
-                   formControlName="confirmPassword">
-          </mat-form-field>
-        </div>
-        <button mat-raised-button color="primary" class="signup-button" (click)="signup()" [disabled]="signupForm.invalid">Sign up</button>
+        <input matInput placeholder="Name" name="name" required formControlName="name">
+        <input matInput placeholder="example@gmail.com" name="email" required formControlName="email">
+        <input matInput placeholder="Password" name="password" type="password" required formControlName="password">
+        <input matInput placeholder="confirm password" name="confirmPassword" type="password" required
+               formControlName="confirmPassword">
+        <button mat-raised-button color="primary" class="signup-button" (click)="signup()"
+                [disabled]="signupForm.invalid">Sign up
+        </button>
       </form>
-    </mat-card-content>
-  </mat-card>
-    <mat-card class="signup-card right-card">
-      <mat-card-content>
-          <h1>Junior Oasis.</h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero
-          </p>
-          <span>Do you have an account?</span> <br>
-          <button>Login</button>
-      </mat-card-content>
-    </mat-card>
-
+    </div>
+    <div class="left-card">
+      <h1>Junior Oasis.</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero
+      </p>
+      <span>Do you have an account?</span> <br>
+      <button>Login</button>
+    </div>
   </div>
 </div>

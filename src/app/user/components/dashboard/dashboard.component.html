@@ -1,5 +1,6 @@
-<div style="min-height: 91vh; padding: 30px" *ngIf="posts">
-  <div>
+<div class="parent-container">
+  <div class="left-container" style="min-height: 91vh; padding: 30px" *ngIf="posts">
+
     <div class="container">
       <ng-container *ngIf="posts.length === 0; else postList">
         <mat-card class="empty-message">
@@ -12,8 +13,23 @@
 
       <ng-template #postList>
         <div class="child" *ngFor="let post of posts">
-          <h2 class="post_title">
 
+          <div class="user">
+            <div class="userInfo">
+              <img
+                src="https://images.pexels.com/photos/1036623/pexels-photo-1036623.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                alt=""/>
+              <div class="details">
+                <a [routerLink]="['/profile', post.userId]" style="text-decoration: none; color: inherit;">
+                  <span class="name">{{ post.owner.userName}}</span>
+                </a>
+                <span class="date">{{ post.createdAt | date:'dd-MM-YYYY'}}</span>
+              </div>
+            </div>
+            <mat-icon>more_horiz</mat-icon>
+          </div>
+
+          <h2 class="post_title">
             <a routerLink="/user/post/{{post.id}}">{{ post.title }}</a>
           </h2>
           <div class="post_content">
@@ -23,12 +39,18 @@
                 <mat-chip *ngFor="let tag of post.tags" color="primary">{{ tag }}</mat-chip>
               </mat-chip-listbox>
             </div>
-            <hr>
-            <h5>
-              Posted by: <b>{{ post.owner.userName}}</b> -
-              Posted on: <b>{{ post.createdAt | date:'dd, MM, YYYY'}}</b>
-            </h5>
           </div>
+
+          <div class="info">
+            <div class="item" (click)="liked = !liked">
+              <mat-icon *ngIf="liked; else notLiked">favorite</mat-icon>
+              22 Likes
+              <ng-template #notLiked>
+                <mat-icon>favorite_border</mat-icon>
+              </ng-template>
+            </div>
+          </div>
+
         </div>
       </ng-template>
 
@@ -38,4 +60,51 @@
       </div>
     </div>
   </div>
+
+  <mat-card class="right-container">
+    <div class="container">
+      <div class="menu">
+        <span class="title-menu">Suggestion for you  <hr></span>
+
+        <div class="user-ele">
+          <img src="https://material.angular.io/assets/img/examples/shiba1.jpg" alt="">
+          <span class="name-ele">Damla Mimi</span>
+        </div>
+        <div class="user-ele">
+          <img src="https://material.angular.io/assets/img/examples/shiba1.jpg" alt="">
+          <span class="name-ele">Louise Mimi</span>
+        </div>
+        <div class="user-ele">
+          <img src="https://material.angular.io/assets/img/examples/shiba1.jpg" alt="">
+          <span class="name-ele">Alex Mimi</span>
+        </div>
+        <div class="user-ele">
+          <img src="https://material.angular.io/assets/img/examples/shiba1.jpg" alt="">
+          <span class="name-ele">Matthieu Mimi</span>
+        </div>
+      </div>
+
+      <div class="menu">
+        <span class="title-menu">Online friends <hr></span>
+        <div class="user-ele">
+          <img src="https://material.angular.io/assets/img/examples/shiba1.jpg" alt="">
+          <span class="name-ele">Sarah Damra</span>
+        </div>
+        <div class="user-ele">
+          <img src="https://material.angular.io/assets/img/examples/shiba1.jpg" alt="">
+          <span class="name-ele">Damla Madineh</span>
+        </div>
+        <div class="user-ele">
+          <img src="https://material.angular.io/assets/img/examples/shiba1.jpg" alt="">
+          <span class="name-ele">Laura Midiea</span>
+        </div>
+        <div class="user-ele">
+          <img src="https://material.angular.io/assets/img/examples/shiba1.jpg" alt="">
+          <span class="name-ele">Damla Mimi</span>
+        </div>
+      </div>
+
+    </div>
+  </mat-card>
+
 </div>

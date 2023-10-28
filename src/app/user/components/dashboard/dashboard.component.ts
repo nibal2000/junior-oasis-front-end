@@ -8,6 +8,9 @@ import {PostService} from "../../user-services/post-service/post.service";
 })
 export class DashboardComponent implements OnInit {
 
+  showComments = false;
+  liked = false;
+
   posts: any[] = [];
   pageNum: number = 0;
   total!: number;
@@ -31,4 +34,9 @@ export class DashboardComponent implements OnInit {
     this.pageNum = event.pageIndex;
     this.getAllPosts();
   }
+
+  toggleComments() {
+    this.showComments = !this.showComments;
+  }
+
 }

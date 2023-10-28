@@ -1,6 +1,40 @@
+.user {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .userInfo {
+    display: flex;
+    gap: 20px;
+
+    img {
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .details {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+
+      .name {
+        font-weight: 500;
+      }
+
+      .date {
+        font-size: 12px;
+      }
+    }
+  }
+}
+
 .post-card {
   padding: 20px;
-  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+  //border: 1px solid #ccc;
   //margin-bottom: 20px;
   display: flex;
   flex-direction: column;
