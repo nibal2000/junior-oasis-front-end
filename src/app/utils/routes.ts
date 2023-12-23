@@ -4,9 +4,10 @@ export default  {
   BASE_ENDPOINT,
   LOGIN : `${BASE_ENDPOINT}/auth/login`,
   SIGNUP : `${BASE_ENDPOINT}/auth/sign-up`,
+  POSTS : `${BASE_ENDPOINT}/posts`,
+  COMMENTS: `${BASE_ENDPOINT}/comments`,
+  ADD_COMMENT_IMG: `${BASE_ENDPOINT}/comments/image`,
+  COMMENTS_OF_POST : `${BASE_ENDPOINT}/comments/post`
 
-  CREATE_POST : `${BASE_ENDPOINT}/post`,
-  GET_ALL_POSTS : `${BASE_ENDPOINT}/posts`,
-  GET_POST_BY_ID : `${BASE_ENDPOINT}/post`,
 }
 

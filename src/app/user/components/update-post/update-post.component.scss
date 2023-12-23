@@ -9,7 +9,7 @@
     width: 90%;
     padding: 30px;
     text-align: center;
-   // background-color: lightgray;
+    // background-color: lightgray;
     box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
   }
 
@@ -40,9 +40,8 @@
   font-weight: bold;
 }
 
-
 .custom-file {
-  margin: 20px;
+  margin: 20px; /* Adjust margin as needed */
 }
 
 .custom-file-input {
@@ -57,4 +56,3 @@
   cursor: pointer;
   color: #838080;
 }
-

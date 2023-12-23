@@ -28,6 +28,15 @@ export class StorageService {
     // it will return true if user not null
   }
 
+  static  getCurrentUser(){
+      return     JSON.parse(window.localStorage.getItem(USER) ?? '{id : 0 , name : "" , email: "" }')
+
+  }
+
+  static isCurrentUser(userId : number){
+      return this.getCurrentUser().id == userId;
+  }
+
   static logout() {
     window.localStorage.removeItem(TOKEN); // we can use clear method also
     window.localStorage.removeItem(USER);

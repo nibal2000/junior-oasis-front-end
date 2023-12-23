@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {StorageService} from "./services/auth-service/storage.service";
 import {NavigationEnd, Router} from "@angular/router";
+import {initFlowbite} from "flowbite";
 
 @Component({
   selector: 'app-root',
@@ -15,6 +16,7 @@ export class AppComponent implements OnInit{
   constructor(private router: Router) { }
 
   ngOnInit() {
+    initFlowbite();
     //this.updateUserLoggedInStatus();
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {

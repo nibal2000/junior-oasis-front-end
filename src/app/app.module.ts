@@ -14,6 +14,9 @@ import {HttpClientModule} from "@angular/common/http";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatSnackBarModule} from "@angular/material/snack-bar";
 import { MatFormFieldModule } from "@angular/material/form-field";
+import { LightgalleryModule } from 'lightgallery/angular';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+
 
 @NgModule({
   declarations: [
@@ -33,7 +36,11 @@ import { MatFormFieldModule } from "@angular/material/form-field";
     MatButtonModule,
     MatCardModule,
     MatInputModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    LightgalleryModule,
+    BrowserAnimationsModule, // required animations module
+    SweetAlert2Module.forRoot(),
+
   ],
   providers: [],
   bootstrap: [AppComponent]
