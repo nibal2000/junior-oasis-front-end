@@ -1,6 +1,6 @@
 import { isDevMode } from '@angular/core'
 
-const BASE_ENDPOINT = isDevMode() ? "http://localhost:8081/api" : "https://goldengate.readresolve.tech:8910/magnolia"
+const BASE_ENDPOINT = isDevMode() ? "http://localhost:8081/api" : "https://goldengate.readresolve.tech:9443/magnolia"
 
 //const BASE_ENDPOINT = "http://localhost:8081/api";
 
