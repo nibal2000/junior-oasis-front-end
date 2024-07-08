@@ -1,10 +1,12 @@
 .mat-toolbar {
   background-color: #27c734;
+  color: rgb(13, 13, 103);
 }
 .navbar {
   display: flex;
   align-items: center;
   padding: 0 16px;
+  flex-wrap: wrap; 
 }
 
 .navbar-logo {
@@ -27,6 +29,38 @@ button-active {
   font-weight: 600;
 }
 
-//.custom-toolbar {
-//  background-color: red;
-//}
+
+
+
+@media (max-width: 768px) {
+  .navbar {
+    justify-content: space-between;
+  }
+
+  .navbar-logo {
+    margin-bottom: 8px;
+  }
+
+  .navbar-menu {
+    display: none; /* Hide buttons initially */
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .navbar-menu.active {
+    display: flex; /* Show buttons when active */
+  }
+
+  .navbar-toggle {
+    display: block; /* Show hamburger menu */
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  .navbar-toggle:focus {
+    outline: none;
+  }
+}

@@ -1,4 +1,4 @@
-<div class="signup-container">
+<!-- <div class="signup-container">
   <div class="card-container">
     <div class="right-card">
       <h2>Signup</h2>
@@ -19,7 +19,144 @@
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero
       </p>
       <span>Do you have an account?</span> <br>
-      <button>Login</button>
+      <button routerLink="/login">Login</button>
+    </div>
+  </div>
+</div> -->
+
+<div class="signup-container">
+  <div class="card-container">
+    <div class="left-card">
+      <h1>Junior Oasis.</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero
+      </p>
+      <span>Do you have an account?</span> <br>
+      <button routerLink="/login">Login</button>
+    </div>
+    <div class="right-card">
+      <h2>Signup</h2>
+      <form [formGroup]="signupForm">
+        <input matInput placeholder="Name" name="name" required formControlName="name">
+        <input matInput placeholder="example@gmail.com" name="email" required formControlName="email">
+        <input matInput placeholder="Password" name="password" type="password" required formControlName="password">
+        <input matInput placeholder="Confirm Password" name="confirmPassword" type="password" required formControlName="confirmPassword">
+        <button mat-raised-button color="primary" class="signup-button" (click)="signup()" [disabled]="signupForm.invalid">Sign up</button>
+      </form>
     </div>
   </div>
 </div>
+
+<style>
+.signup-container {
+  height: 100vh;
+  background-color: rgb(209, 219, 209);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-container {
+  width: 55%;
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  border-radius: 10px;
+  min-height: 600px;
+  overflow: hidden;
+}
+
+.left-card {
+  flex: 1;
+  background: linear-gradient(rgba(66, 183, 42, 0.5), rgba(39, 11, 96, 0.5)), center;
+  background-size: cover;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  color: white;
+}
+
+.left-card h1 {
+  font-size: 100px;
+}
+
+.left-card p {
+  /* Adjust styles as needed */
+}
+
+.left-card span {
+  font-size: 14px;
+}
+
+.left-card button {
+  width: 50%;
+  padding: 10px;
+  border: none;
+  background-color: white;
+  color: rebeccapurple;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 7px;
+}
+
+.right-card {
+  flex: 1;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  justify-content: center;
+}
+
+.right-card h2 {
+  color: #555;
+}
+
+.right-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.right-card form input {
+  height: 50px;
+  border-radius: 10px;
+  border: 1px solid rgb(227, 225, 225);
+  padding-left: 20px;
+}
+
+.right-card form button {
+  width: 50%;
+  padding: 10px;
+  border: none;
+  background-color: #42b92a;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 7px;
+}
+
+@media (max-width: 768px) {
+  .card-container {
+    flex-direction: column;
+    width: 90%;
+  }
+
+  .left-card {
+    padding: 20px;
+  }
+
+  .right-card {
+    padding: 20px;
+  }
+
+  .left-card h1 {
+    font-size: 50px;
+  }
+
+  .left-card button, .right-card form button {
+    width: 100%;
+  }
+}
+</style>
